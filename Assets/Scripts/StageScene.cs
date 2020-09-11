@@ -56,7 +56,7 @@ namespace RunGame {
 
         // ステージ数を指定します。
         [SerializeField]
-        private int stageCount = 4;
+        private int stageCount = 0;
 
         // 現在プレイしているステージ番号を取得または設定します。
         public static int StageNo {
@@ -81,6 +81,13 @@ namespace RunGame {
 
         // ポーズ状態の場合はtrue、プレイ状態の場合はfalse
         bool isPaused = false;
+
+        public float PlayTime { get { return playTime; } }
+        //ステージの経過時間
+        public float playTime = 30;
+        //残り時間表示のUIを指定します。
+        [SerializeField]
+        private Text timeUi = null;
 
         #region インスタンスへのstaticなアクセスポイント
         // このクラスのインスタンスを取得します。
